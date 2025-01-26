@@ -10,3 +10,11 @@ export type Product = {
     count: number;
   };
 };
+
+export type Order = {
+  id: number;
+  products: Product[];
+  total: number;
+  date: string;
+  status: string;
+};

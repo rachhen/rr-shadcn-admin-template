@@ -18,6 +18,11 @@ export default [
           route(":id/edit", "routes/dashboard/products/edit.tsx"),
         ]),
       ]),
+      ...prefix("orders", [
+        layout("routes/dashboard/orders/layout.tsx", [
+          index("routes/dashboard/orders/index.tsx"),
+        ]),
+      ]),
     ]),
   ]),
 ] satisfies RouteConfig;
