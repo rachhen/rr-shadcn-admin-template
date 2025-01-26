@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+
 import { AppBreadcrumb } from "~/components/app-breadcrumb";
 import { AppSidebar } from "~/components/app-sidebar";
 import { ThemeToggle } from "~/components/theme-toggle";
@@ -8,6 +9,14 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "~/components/ui/sidebar";
+import { requiredAuth } from "~/utils/auth.server";
+import type { Route } from "./+types";
+
+export const loader = async ({ request }: Route.LoaderArgs) => {
+  const user = await requiredAuth(request);
+
+  return { user };
+};
 
 export default function Page() {
   return (
