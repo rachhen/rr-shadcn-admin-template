@@ -16,8 +16,6 @@ export const authenticate = async (user: User, redirectPath?: string) => {
   const session = await sessionStorage.getSession();
   session.set("user", user);
 
-  console.log("authenticated user", user);
-
   throw redirect(redirectPath || "/dashboard", {
     headers: {
       "Set-Cookie": await sessionStorage.commitSession(session),
