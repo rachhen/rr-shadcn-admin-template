@@ -16,18 +16,6 @@ export const meta: Route.MetaFunction = () => {
   return [{ title: "Dashboard" }];
 };
 
-export const clientLoader = async ({ request }: Route.ClientLoaderArgs) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  return {};
-};
-
-clientLoader.hydrate = true as const;
-
-export function HydrateFallback() {
-  return <div className="p-4">Loading...</div>;
-}
-
 function Page() {
   return (
     <div className="flex-1 space-y-4 p-4 pt-0">

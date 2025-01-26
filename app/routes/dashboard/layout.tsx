@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import { AppBreadcrumb } from "~/components/app-breadcrumb";
 import { AppSidebar } from "~/components/app-sidebar";
+import { ThemeToggle } from "~/components/theme-toggle";
 import { Separator } from "~/components/ui/separator";
 import {
   SidebarInset,
@@ -18,6 +19,9 @@ export default function Page() {
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <AppBreadcrumb baseHref="/dashboard" baseTitle="Dashboard" />
+          </div>
+          <div className="ml-auto pr-4">
+            <ThemeToggle />
           </div>
         </header>
         <Outlet />
