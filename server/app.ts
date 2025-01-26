@@ -9,6 +9,7 @@ declare module "react-router" {
 }
 
 const app = express();
+app.disable("x-powered-by");
 
 app.use(
   createRequestHandler({

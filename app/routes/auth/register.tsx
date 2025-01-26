@@ -27,7 +27,7 @@ export const action = async ({ request }: Route.ActionArgs) => {
     id: 1,
     email: data.email,
     name: data.fullName,
-    image: "/avatars/shadcn.jpg",
+    image: "shadcn.jpg",
   });
 
   return null;
