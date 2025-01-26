@@ -3,6 +3,7 @@ import {
   index,
   layout,
   prefix,
+  route,
 } from "@react-router/dev/routes";
 
 export default [
@@ -13,6 +14,8 @@ export default [
       ...prefix("products", [
         layout("routes/dashboard/products/layout.tsx", [
           index("routes/dashboard/products/index.tsx"),
+          route("new", "routes/dashboard/products/new.tsx"),
+          route(":id/edit", "routes/dashboard/products/edit.tsx"),
         ]),
       ]),
     ]),
